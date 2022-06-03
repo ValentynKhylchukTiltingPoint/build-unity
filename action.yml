@@ -20,6 +20,15 @@ inputs:
   build-number:
     description: Set application build number. Only for default build method
     required: false
+  unity-username:
+    description: Unity username
+    required: false
+  unity-password:
+    description: Unity password
+    required: false
+  unity-serial:
+    description: Unity serial
+    required: false
   build-defines:
     description: Set scripting define symbols. For example, RELEASE_VERSION;ENG_VERSION. Only for default build method
     required: false
