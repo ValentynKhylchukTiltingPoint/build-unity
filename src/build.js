@@ -47,13 +47,20 @@ async function run() {
         buildArgs += ` -projectPath "${projectPath}"`;
         buildArgs += ` -buildTarget "${buildTatget}"`;
         buildArgs += ` -buildPath "${buildPath}"`;
-        
-        buildArgs += ` -serial "${unitySerial}"`;
-        buildArgs += ` -username "${unityUsername}"`;
-        buildArgs += ` -password "${unityPassword}"`;
-        
         buildArgs += ` -executeMethod "${buildMethod}"`;
         buildArgs += ` ${buildMethodArgs}`;
+        
+        if (unitySerial) {
+            buildArgs += ` -serial "${unitySerial}"`;
+        }
+        if (unityUsername) {
+            buildArgs += ` -username "${unityUsername}"`;
+        }
+        if (unityPassword) {
+            buildArgs += ` -password "${unityPassword}"`;
+        }
+        
+        
         if (buildVersion) {
             buildArgs += ` -buildVersion "${buildVersion}"`;
         }
