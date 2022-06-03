@@ -20,6 +20,11 @@ async function run() {
         const androidKeystorePass = core.getInput('android-keystore-pass');
         const androidKeyaliasName = core.getInput('android-keyalias-name');
         const androidKeyaliasPass = core.getInput('android-keyalias-pass');
+        
+        const unityUsername = core.getInput('unity-username');
+        const unityPassword = core.getInput('unity-password');
+        const unitySerial = core.getInput('unity-serial');
+        
         let buildMethod = core.getInput('build-method');
         const buildMethodArgs = core.getInput('build-method-args');
 
@@ -42,6 +47,11 @@ async function run() {
         buildArgs += ` -projectPath "${projectPath}"`;
         buildArgs += ` -buildTarget "${buildTatget}"`;
         buildArgs += ` -buildPath "${buildPath}"`;
+        
+        buildArgs += ` -serial "${unitySerial}"`;
+        buildArgs += ` -username "${unityUsername}"`;
+        buildArgs += ` -password "${unityPassword}"`;
+        
         buildArgs += ` -executeMethod "${buildMethod}"`;
         buildArgs += ` ${buildMethodArgs}`;
         if (buildVersion) {
